@@ -1,0 +1,89 @@
+<p1> testing complete<p1>
+
+
+
+  <%= form_with scope: :article, url: articles_path, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_area :title %>
+  </p>
+
+  <p>
+    <%= form.label :street1 %><br>
+    <%= form.text_area :text %>
+  </p>
+
+  <p>
+    <%= form.label :street2 %><br>
+    <%= form.text_area :name %>
+  </p>
+
+  <p>
+    <%= form.label :city %><br>
+    <%= form.text_area :city %>
+  </p>
+
+  <p>
+    <%= form.label :state %><br>
+    <%= form.text_area :state %>
+  </p>
+
+  <p>
+    <%= form.label :zip %><br>
+    <%= form.text_area :zip %>
+  </p>
+
+  <p>
+    <%= form.label :phone %><br>
+    <%= form.text_area :phone %>
+  </p>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_area :tname %>
+  </p>
+
+  <p>
+    <%= form.label :company %><br>
+    <%= form.text_area :tcompany %>
+  </p>
+
+  <p>
+    <%= form.label :city %><br>
+    <%= form.text_area :tcity %>
+  </p>
+
+  <p>
+    <%= form.label :state %><br>
+    <%= form.text_area :tstate %>
+  </p>
+
+  <p>
+    <%= form.label :zip %><br>
+    <%= form.text_area :tzip %>
+  </p>
+
+  <p>
+    <%= form.label :length %><br>
+    <%= form.text_area :length %>
+  </p>
+
+  <p>
+    <%= form.label :width %><br>
+    <%= form.text_area :width %>
+  </p>
+
+  <p>
+    <%= form.label :height %><br>
+    <%= form.text_area :height %>
+  </p>
+
+  <p>
+    <%= form.label :weight %><br>
+    <%= form.text_area :weight %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
