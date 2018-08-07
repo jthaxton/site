@@ -16,7 +16,7 @@ end
   def show
     @article = Article.find(params[:id])
     require 'easypost'
-EasyPost.api_key = "mf0k6XfrFtHy2PM1HHPGQg"
+EasyPost.api_key = "ADD KEY"
 #put categories here
 p @article.city
 p 1
