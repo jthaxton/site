@@ -1,86 +1,89 @@
-<p1> testing complete<p1>
+<p1> Shipping Information<p1>
 
 
 
   <%= form_with scope: :article, url: articles_path, local: true do |form| %>
+  <p> From Address <p>
   <p>
-    <%= form.label :name %><br>
-    <%= form.text_area :title %>
+    <%= form.label :name %>
+    <%= form.text_field :title %>
   </p>
 
   <p>
-    <%= form.label :street1 %><br>
-    <%= form.text_area :text %>
+    <%= form.label :street1 %>
+    <%= form.text_field :text %>
   </p>
 
   <p>
-    <%= form.label :street2 %><br>
-    <%= form.text_area :name %>
+    <%= form.label :street2 %>
+    <%= form.text_field :name %>
   </p>
 
   <p>
-    <%= form.label :city %><br>
-    <%= form.text_area :city %>
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </p>
+
+  <p>
+    <%= form.label :state %>
+    <%= form.text_field :state %>
+  </p>
+
+  <p>
+    <%= form.label :zip %>
+    <%= form.text_field :zip %>
+  </p>
+
+  <p>
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </p>
+<br>
+<p> To Address <p>
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :tname %>
+  </p>
+
+  <p>
+    <%= form.label :company %>
+    <%= form.text_field :tcompany %>
+  </p>
+
+  <p>
+    <%= form.label :city %>
+    <%= form.text_field :tcity %>
   </p>
 
   <p>
     <%= form.label :state %><br>
-    <%= form.text_area :state %>
+    <%= form.text_field :tstate %>
   </p>
 
   <p>
-    <%= form.label :zip %><br>
-    <%= form.text_area :zip %>
+    <%= form.label :zip %>
+    <%= form.text_field :tzip %>
+  </p>
+<br>
+<p> Parcel Information <p>
+  <p>
+    <%= form.label :length %>
+    <%= form.text_field :length %>
   </p>
 
   <p>
-    <%= form.label :phone %><br>
-    <%= form.text_area :phone %>
+    <%= form.label :width %>
+    <%= form.text_field :width %>
   </p>
 
   <p>
-    <%= form.label :name %><br>
-    <%= form.text_area :tname %>
+    <%= form.label :height %>
+    <%= form.text_field :height %>
   </p>
 
   <p>
-    <%= form.label :company %><br>
-    <%= form.text_area :tcompany %>
-  </p>
-
-  <p>
-    <%= form.label :city %><br>
-    <%= form.text_area :tcity %>
-  </p>
-
-  <p>
-    <%= form.label :state %><br>
-    <%= form.text_area :tstate %>
-  </p>
-
-  <p>
-    <%= form.label :zip %><br>
-    <%= form.text_area :tzip %>
-  </p>
-
-  <p>
-    <%= form.label :length %><br>
-    <%= form.text_area :length %>
-  </p>
-
-  <p>
-    <%= form.label :width %><br>
-    <%= form.text_area :width %>
-  </p>
-
-  <p>
-    <%= form.label :height %><br>
-    <%= form.text_area :height %>
-  </p>
-
-  <p>
-    <%= form.label :weight %><br>
-    <%= form.text_area :weight %>
+    <%= form.label :weight %>
+    <%= form.text_field :weight %>
   </p>
 
   <p>
