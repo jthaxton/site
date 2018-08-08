@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-  validates :from_name, :from_street1, :from_street2, :from_city, :to_name, :to_company, :to_city, :to_zip, presence: true,
+  validates :from_name, :from_street1, :from_city, :to_name, :to_street, :to_city, :to_zip, presence: true,
                    length:  { minimum: 5 }
   validates :from_zip, :to_zip, presence: true,
                     length: {minimum:5, maximum:5}
