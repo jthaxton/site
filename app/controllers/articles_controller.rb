@@ -1,28 +1,30 @@
 class ArticlesController < ApplicationController
+
   def index
     @articles = Article.all
   end
 
-
-def create
-
-  @article = Article.new(params.require(:article).permit(:from_name, :from_street1, :from_street2, :from_city, :from_state, :from_zip, :from_phone, :to_name, :to_company, :to_street, :to_city, :to_state, :to_zip, :length, :width, :height, :weight))
-
-  if @article.save
-    redirect_to @article
-  else
-    render 'welcome/new'
+  def new
+    @article = Article.new
   end
 
-end
+  def create
+
+    @article = Article.new(params.require(:article).permit(:from_name, :from_street1, :from_street2, :from_city, :from_state, :from_zip, :from_phone, :to_name, :to_company, :to_street, :to_city, :to_state, :to_zip, :length, :width, :height, :weight))
+    if @article.save
+      redirect_to @article
+    else
+      render 'articles/new'
+    end
+
+  end
 
   def show
     @article = Article.find(params[:id])
     require 'easypost'
 EasyPost.api_key = "INSERT KEY"
 #put categories here
-# p @article.city
-# p 1
+
 fromAddress = EasyPost::Address.create(
   company: @article.from_name,
   street1: @article.from_street1,
@@ -66,7 +68,5 @@ shipment.buy(
 @linked = shipment.postage_label.label_url
   end
 
-  def new
-    # p params
-  end
+
 end
