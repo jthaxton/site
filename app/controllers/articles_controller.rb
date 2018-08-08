@@ -6,36 +6,39 @@ class ArticlesController < ApplicationController
 
 def create
 
-  @article = Article.new(params.require(:article).permit(:title, :text, :name, :city, :state, :zip, :phone, :tname, :tcompany, :tcity, :tstate, :tzip, :length, :width, :height, :weight))
+  @article = Article.new(params.require(:article).permit(:from_name, :from_street1, :from_street2, :from_city, :from_state, :from_zip, :from_phone, :to_name, :to_company, :to_street, :to_city, :to_state, :to_zip, :length, :width, :height, :weight))
 
-  @article.save
-  redirect_to @article
+  if @article.save
+    redirect_to @article
+  else
+    render 'welcome/new'
+  end
 
 end
 
   def show
     @article = Article.find(params[:id])
     require 'easypost'
-EasyPost.api_key = "ADD KEY"
+EasyPost.api_key = "INSERT KEY"
 #put categories here
-p @article.city
-p 1
+# p @article.city
+# p 1
 fromAddress = EasyPost::Address.create(
-  company: @article.title,
-  street1: @article.text,
-  street2: @article.name,
-  city: @article.city,
-  state: @article.state,
-  zip: @article.zip,
-  phone: @article.phone,
+  company: @article.from_name,
+  street1: @article.from_street1,
+  street2: @article.from_street2,
+  city: @article.from_city,
+  state: @article.from_state,
+  zip: @article.from_zip,
+  phone: @article.from_phone,
 )
 toAddress = EasyPost::Address.create(
-  name: @article.tname,
-  company: @article.tcompany,
-  street1: @article.tstreet,
-  city: @article.tcity,
-  state: @article.tstate,
-  zip: @article.tzip
+  name: @article.to_name,
+  company: @article.to_company,
+  street1: @article.to_street,
+  city: @article.to_city,
+  state: @article.to_state,
+  zip: @article.to_zip
 )
 
 @parcel = EasyPost::Parcel.create(
@@ -64,6 +67,6 @@ shipment.buy(
   end
 
   def new
-    p params
+    # p params
   end
 end

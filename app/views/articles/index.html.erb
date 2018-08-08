@@ -1,0 +1,35 @@
+<h1>Listing articles</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+  </tr>
+
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.from_name %></td>
+      <td><%= article.from_street1 %></td>
+      <td><%= article.from_street2 %></td>
+      <td><%= article.from_city %></td>
+      <td><%= article.from_state %></td>
+      <td><%= article.from_zip %></td>
+      <td><%= article.from_phone %></td>
+
+      <td><%= article.to_name %></td>
+      <td><%= article.to_company %></td>
+      <td><%= article.to_street %></td>
+      <td><%= article.to_city %></td>
+      <td><%= article.to_state %></td>
+      <td><%= article.to_zip %></td>
+
+      <td><%= article.length %></td>
+      <td><%= article.width %></td>
+      <td><%= article.height %></td>
+      <td><%= article.weight %></td>
+
+      <td><%= link_to 'Show', article_path(article) %></td>
+    </tr>
+  <% end %>
+</table>
