@@ -1,9 +1,14 @@
+<head>
 <p1> Shipping Information<p1>
-
+</head>
 
 
   <%= form_with scope: :article, url: articles_path, local: true do |form| %>
+  <body>
+
   <p> From Address <p>
+
+
   <p>
     <%= form.label :name %>
     <%= form.text_field :title %>
@@ -85,6 +90,8 @@
     <%= form.label :weight %>
     <%= form.text_field :weight %>
   </p>
+
+  </body>
 
   <p>
     <%= form.submit %>
