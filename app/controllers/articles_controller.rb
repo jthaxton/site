@@ -22,7 +22,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     require 'easypost'
-EasyPost.api_key = "INSERT KEY"
+EasyPost.api_key = "Insert Key"
 #put categories here
 
 fromAddress = EasyPost::Address.create(
